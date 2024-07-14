@@ -1292,16 +1292,16 @@ input[type="text"] {
 
 
 .contact-form {
-  background-color: #FF9000; /* Soft background color */
+  background-color: #ffffff; /* Soft background color */
   padding: 20px;
   border-radius: 0px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   max-width: 600px;
   margin:  auto;
 }
 
 .contact-form h2 {
-  color: #ffffff;
+  color: #000000;
   font-family: 'Arial', sans-serif;
 }
 
@@ -1312,14 +1312,14 @@ input[type="text"] {
 .contact-form .form-control {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 5px;
 }
 
 .contact-form .form-control:focus {
-  border-color: #66afe9;
+  border-color: #000000;
   outline: none;
-  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 background-color: #e0f7fa;
 }
 
@@ -1328,7 +1328,7 @@ background-color: #e0f7fa;
 }
 
 .contact-form button {
-  background-color: #007bff;
+  background-color: #000000;
   color: #fff;
   padding: 10px 15px;
   border: none;
