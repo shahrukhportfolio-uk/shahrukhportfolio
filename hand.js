@@ -1,19 +1,32 @@
 
-function sendMessage(){
-	(function(){
-	emailjs.init("_GykDLP-v3c0AmXo1"); // Account Public Key
-	})();
-	var serviceID = "service_oxx2qm7"; // Email Service ID
-	var templateID = "template_ex2if5f"; // Email Template ID
-	var params = {
-	sendername: document.querySelector("#name").value,
-	senderemail: document.querySelector("#email").value, 
-	subject: document.querySelector("#subject").value,
-	message: document.querySelector("#message").value
-	};
-	emailjs.send(serviceID, templateID, params)
-	.then( res => {
-		alert('Thank you, ' + params['sendername'] + '! Your message has been send.');
-	})
-	.catch();
-	}
+			function handleSubmit(event) {
+				event.preventDefault(); // Prevent the default form submission
+		
+				// Initialize EmailJS with your user ID
+				emailjs.init("6687pi6kQmnJecx6G"); // Replace with your EmailJS user ID
+		
+				// Prepare the email parameters
+				var serviceID = "service_340e56g"; // Replace with your EmailJS service ID
+				var templateID = "template_o5r5wrj"; // Replace with your EmailJS template ID
+				var params = {
+					sendername: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
+					senderemail: document.getElementById('email').value,
+					subject: document.getElementById('subject').value,
+					message: document.getElementById('message').value
+				};
+		
+				// Send email using EmailJS
+				emailjs.send(serviceID, templateID, params)
+					.then(function(response) {
+						console.log('SUCCESS!', response.status, response.text);
+						alert('Thank you, ' + params.sendername + '! Your message has been sent.');
+						resetForm();
+					}, function(error) {
+						console.log('FAILED...', error);
+						alert('Oops! Something went wrong. Please try again.');
+					});
+			}
+		
+			function resetForm() {
+				document.getElementById('myForm').reset();
+			}
